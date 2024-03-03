@@ -30,18 +30,21 @@ class LoginPage extends BasePage {
     }
 
     getErrorMessageText() {
-        return cy.get('.heading1 .subtext');
+        return cy.get('.ng-star-inserted');
 
+    }
+
+
+
+    fillLoginFields(email = '', password = '') {
+        cy.log('Fill in authorization fields');
+        email ? this.getEmailField().type(email) : cy.log('Skip email field');
+        password ? this.getPasswordField().type(password) : cy.log('Skip password field');
+        this.getLoginButton().click();
     }
 
 }
 
-//     fillLoginFields(username = '', password = '') {
-//         cy.log('Fill in authorization fields');
-//         username ? this.getLoginNameField().type(username) : cy.log('Skip username field');
-//         password ? this.getPasswordField().type(password) : cy.log('Skip password field');
-//         this.getSubmitButton().click();
-//     }
-// }
+
 
 export default new LoginPage()

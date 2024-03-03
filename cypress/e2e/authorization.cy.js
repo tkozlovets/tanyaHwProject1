@@ -17,32 +17,29 @@ describe('Authorization positive scenarios', () => {
     })
 })
 
-// describe('Authorization negative scenarios', () => {
-//
-//     it('Authorization without entered username', () => {
-//         LoginPage.visit();
-//         LoginPage.fillLoginFields('', user.password);
-//
-//         cy.log('Error should be displayed');
-//         LoginPage.getErrorMessageText().should('contain', 'Error: Incorrect login or password provided.');
-//     })
-//
-//
-//     it('Authorization without entered password', () => {
-//         LoginPage.visit();
-//         LoginPage.fillLoginFields(user.loginname);
-//
-//         cy.log('Error should be displayed');
-//         LoginPage.getErrorMessageText().should('contain', 'Error: Incorrect login or password provided.');
-//     })
-//
-//     it('Authorization with empty fields', () => {
-//         LoginPage.visit();
-//         LoginPage.fillLoginFields();
-//
-//         cy.log('Error should be displayed');
-//         LoginPage.getErrorMessageText().should('contain', 'Incorrect login or password provided.');
-//     })
-//
-//
-// })
+describe('Authorization negative scenarios', () => {
+
+    it('Authorization with incorrect email', () => {
+        LoginPage.visit();
+        LoginPage.getEmailField().type('tk1@gmail.com');
+        LoginPage.getPasswordField().type('Qa123456+');
+        LoginPage.getLoginButton().click();
+
+        cy.log('Error should be displayed');
+        LoginPage.getErrorMessageText().should('contain', 'Invalid email or password');
+    })
+
+})
+
+describe('Authorization negative scenarios', () => {
+
+    it('Authorization with empty email', () => {
+        LoginPage.visit();
+        LoginPage.getPasswordField().type('Qa123456+');
+
+
+        cy.log('Login button should be disabled');
+        LoginPage.getLoginButton().should('have.attr', 'disabled');
+    })
+
+})
