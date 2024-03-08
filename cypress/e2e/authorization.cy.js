@@ -1,6 +1,6 @@
 import user from '../fixtures/user.json'
 import LoginPage from "../support/pages/LoginPage";
-import ProfilePage from "../support/pages/ProfilePage";
+
 
 
 describe('Authorization positive scenarios', () => {
