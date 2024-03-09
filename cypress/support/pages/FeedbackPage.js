@@ -9,9 +9,17 @@ class FeedbackPage extends BasePage {
     getFeedbackLink() {
         return cy.get('i:contains("feedback")');
     }
+
+    getCommentField() {
+        return cy.get('#comment');
+    }
+
+    getFeedbackRating() {
+        return cy.get('.mat-slider-ticks').last();
+    }
+
+
 }
-
-
 
 
 export default new FeedbackPage()

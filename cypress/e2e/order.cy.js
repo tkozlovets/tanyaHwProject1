@@ -38,7 +38,7 @@ describe('Order suite', () => {
 
         OrderPage.getAddressContinueButton().click();
 
-        OrderPage.getDeliverySpeedButton().click();
+        OrderPage.getDeliverySpeedButton().click( {force: true});
 
         OrderPage.getAddressContinue1Button().click();
 

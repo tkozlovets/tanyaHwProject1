@@ -7,7 +7,6 @@ class RegistrationPage extends BasePage {
         cy.get('[aria-label="Close Welcome Banner"]').click();
     }
 
-
     getEmailField() {
        return cy.get('[aria-label="Email address field"]');
     }
@@ -42,7 +41,6 @@ class RegistrationPage extends BasePage {
     }
 
     }
-
 
 
 export default new RegistrationPage()

@@ -35,7 +35,6 @@ class LoginPage extends BasePage {
     }
 
 
-
     fillLoginFields(email = '', password = '') {
         cy.log('Fill in authorization fields');
         email ? this.getEmailField().type(email) : cy.log('Skip email field');
@@ -44,7 +43,5 @@ class LoginPage extends BasePage {
     }
 
 }
-
-
 
 export default new LoginPage()

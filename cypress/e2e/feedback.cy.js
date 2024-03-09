@@ -1,12 +1,12 @@
 
 import LoginPage from "../support/pages/LoginPage";
+import {solveCaptcha} from '../support/helper'
 import FeedbackPage from "../support/pages/FeedbackPage";
-import user from "../fixtures/user.json";
-import OrderPage from "../support/pages/OrderPage";
 
 
-describe('Order suite', () => {
-    it('Order from homepage', () => {
+
+describe('Feedback suite', () => {
+    it('Completing Feedback form', () => {
         LoginPage.visit();
         LoginPage.fillLoginFields('tk@gmail.com', 'Qa123456+');
 
@@ -14,5 +14,20 @@ describe('Order suite', () => {
 
         FeedbackPage.getFeedbackLink().click();
 
-    })
-})
+        FeedbackPage.getCommentField().type("Hello");
+
+        FeedbackPage.getFeedbackRating().click();
+
+        solveCaptcha();
+
+
+                });
+
+});
+
+
+
+
+
+
+
