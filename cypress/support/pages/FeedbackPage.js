@@ -18,6 +18,10 @@ class FeedbackPage extends BasePage {
         return cy.get('.mat-slider-ticks').last();
     }
 
+    getSubmitButton() {
+        return cy.get('#submitButton');
+    }
+
 
 }
 

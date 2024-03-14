@@ -20,6 +20,8 @@ describe('Feedback suite', () => {
 
         solveCaptcha();
 
+        FeedbackPage.getSubmitButton().click();
+
 
                 });
 

@@ -23,7 +23,7 @@ describe('Positive scenario. Registration form fill out', () => {
     cy.log('Fill out password field');
     RegistrationPage.getPasswordField().type(user.password);
 
-    cy.log('Fill out password field');
+    cy.log('Fill out confirmation password field');
     RegistrationPage.getConfirmPasswordField().type(user.password);
 
     cy.log('Click Secret question Dropdown');
