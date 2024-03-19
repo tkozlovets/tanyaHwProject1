@@ -5,9 +5,9 @@ export default class BasePage {
     //     this.button = '.button';
     // }
     //
-    // getSearchInput() {
-    //     return cy.get('#filter_keyword');
-    // }
+    getMenuIcon() {
+        return cy.get('span:contains("menu")');
+    }
     //
     // getContentPanel() {
     //     return cy.get('#filter_keyword');
